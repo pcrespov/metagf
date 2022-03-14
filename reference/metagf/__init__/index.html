@@ -1,0 +1,2316 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>init - MetaGF</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metagf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MetaGF" class="md-header__button md-logo" aria-label="MetaGF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MetaGF
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+                init  
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MetaGF" class="md-nav__button md-logo" aria-label="MetaGF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MetaGF
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        metagf library
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intde/" class="md-nav__link">
+        Intde
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../momi/" class="md-nav__link">
+        Momi
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sommerfeld/" class="md-nav__link">
+        Sommerfeld
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toms468/" class="md-nav__link">
+        Toms468
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../demo/" class="md-nav__link">
+        Demo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../refs/" class="md-nav__link">
+        Bibliography
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metagf" class="md-nav__link">
+    metagf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metagf.intde" class="md-nav__link">
+    intde
+  </a>
+  
+    <nav class="md-nav" aria-label="intde">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.intde.intdei" class="md-nav__link">
+    intdei()
+  </a>
+  
+    <nav class="md-nav" aria-label="intdei()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.intde.intdei--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.intde.intdei--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.intde.intdei--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metagf.momi" class="md-nav__link">
+    momi
+  </a>
+  
+    <nav class="md-nav" aria-label="momi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.MosigMichalski" class="md-nav__link">
+    MosigMichalski()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.mixedQuad" class="md-nav__link">
+    mixedQuad()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.omega" class="md-nav__link">
+    omega()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.partExtrap" class="md-nav__link">
+    partExtrap()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.partSum" class="md-nav__link">
+    partSum()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.tanhSinhQuad" class="md-nav__link">
+    tanhSinhQuad()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.term" class="md-nav__link">
+    term()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.momi.truncIndex" class="md-nav__link">
+    truncIndex()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metagf.sommerfeld" class="md-nav__link">
+    sommerfeld
+  </a>
+  
+    <nav class="md-nav" aria-label="sommerfeld">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.gauleg" class="md-nav__link">
+    gauleg()
+  </a>
+  
+    <nav class="md-nav" aria-label="gauleg()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.gauleg--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.halfsine" class="md-nav__link">
+    halfsine()
+  </a>
+  
+    <nav class="md-nav" aria-label="halfsine()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.halfsine--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.halfsine--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.halfsine--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s0" class="md-nav__link">
+    intt2_s0()
+  </a>
+  
+    <nav class="md-nav" aria-label="intt2_s0()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s0--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s0--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s0--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s1" class="md-nav__link">
+    intt2_s1()
+  </a>
+  
+    <nav class="md-nav" aria-label="intt2_s1()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s1--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s1--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.intt2_s1--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s0" class="md-nav__link">
+    it1_s0()
+  </a>
+  
+    <nav class="md-nav" aria-label="it1_s0()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s0--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s0--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s0--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s1" class="md-nav__link">
+    it1_s1()
+  </a>
+  
+    <nav class="md-nav" aria-label="it1_s1()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s1--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s1--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it1_s1--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s0" class="md-nav__link">
+    it2_s0()
+  </a>
+  
+    <nav class="md-nav" aria-label="it2_s0()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s0--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s0--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s0--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s1" class="md-nav__link">
+    it2_s1()
+  </a>
+  
+    <nav class="md-nav" aria-label="it2_s1()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s1--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s1--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.it2_s1--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.quad" class="md-nav__link">
+    quad()
+  </a>
+  
+    <nav class="md-nav" aria-label="quad()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.quad--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.quad--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.sommerfeld.quad--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metagf.toms468" class="md-nav__link">
+    toms468
+  </a>
+  
+    <nav class="md-nav" aria-label="toms468">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.halfsine" class="md-nav__link">
+    halfsine()
+  </a>
+  
+    <nav class="md-nav" aria-label="halfsine()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.halfsine--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.halfsine--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.halfsine--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.isign" class="md-nav__link">
+    isign()
+  </a>
+  
+    <nav class="md-nav" aria-label="isign()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.isign--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.qsub" class="md-nav__link">
+    qsub()
+  </a>
+  
+    <nav class="md-nav" aria-label="qsub()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.qsub--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.qsuba" class="md-nav__link">
+    qsuba()
+  </a>
+  
+    <nav class="md-nav" aria-label="qsuba()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.qsuba--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.quad" class="md-nav__link">
+    quad()
+  </a>
+  
+    <nav class="md-nav" aria-label="quad()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.quad--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.quad--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metagf.toms468.quad--rev-date-author-description" class="md-nav__link">
+    Rev   Date        Author                          Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>  init  </h1>
+
+<div class="doc doc-object doc-module">
+
+<a id="metagf"></a>
+    <div class="doc doc-contents first">
+
+      <p>Numerical Sommerfeld Integrals</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="metagf.intde" class="doc doc-heading">
+        <code>intde</code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Created on Tue Nov 12 14:35:35 2019</p>
+<p>@author: U80824876</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.intde.intdei" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">intdei</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="g-">
+  <summary>function</summary>
+  <p>A Python function or method used to integrate. If <code>G</code> takes many
+arguments, it is integrated along the axis corresponding to the
+first argument.</p>
+</details>
+<details class="a-">
+  <summary>double</summary>
+  <p>Lower limit of integration</p>
+</details>
+<details class="rho-">
+  <summary>double</summary>
+  <p>Spatial variable</p>
+</details>
+<details class="n-">
+  <summary>integer</summary>
+  <p>Number of integration points in the quadrature rule</p>
+</details>
+<details class="h-">
+  <summary>double</summary>
+  <p>Step size parameter, default h = 1.0/32.0</p>
+</details>
+<details class="nu-">
+  <summary>integer</summary>
+  <p>Order of transformation nu = 0, 1</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="result-">
+  <summary>float</summary>
+  <p>Numerical value of the integral
+    G(kro, args) * J_nu(kro * rho) * kro^(nu+1)
+over the semi-infinite interval kro = (a, infty)</p>
+</details>      <p>intdei(G, a, n, args)</p>
+<p>This subroutine computes the integral of the following function
+    G(kro, args) * J0(kro * rho) * kro,   for nu = 0
+    G(kro, args) * J1(kro * rho) * kro^2, for nu = 1
+over the inverval kro = (a, infty)
+using double exponential-type quadrature formulas from
+[1] Golubovic et al. "Fast Computation of Sommerfeld Integral Tails via Direct
+Integration Based on Double Exponential-Type Quadrature Formulas,"
+IEEE Transactions on Antennas and Propagation, vol. 59, no. 2, February 2011</p>
+<h5 id="metagf.intde.intdei--parameters">Parameters</h5>
+<h5 id="metagf.intde.intdei--returns">Returns</h5>
+<h5 id="metagf.intde.intdei--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    12NOV19     Ivica Stevanovic, OFCOM         First implementation in python</p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="metagf.momi" class="doc doc-heading">
+        <code>momi</code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Created on Sat Oct 12 16:09:09 2019</p>
+<p>This library of functions implements DE tanh-sinh integration routines and general weighted averages
+as defined in the following paper:</p>
+<p>Krzysztof A. Michalski &amp; Juan R. Mosig (2016) Efficient computation of
+Sommerfeld integral tails – methods and algorithms, Journal of Electromagnetic Waves and
+Applications, 30:3, 281-317
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>@author: Ivica Stevanovic (OFCOM)</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.MosigMichalski" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MosigMichalski</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This function implements the weighted averages method via the
+Mosig-Michalski algorithm
+according to Michalski&amp;Mosig's paper in
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>mu:     convergence (1 - logarithmic, 2 - otherwise)
+k:      instantaneous transformation order (k = 0,...,kmax)
+s:      kth partial sum
+omega:  ratio of the current and previous remainder estimates at the transformation order k
+X:      an array of dimension k+1: xn = beta + n, beta usually set to 1
+R:      an array of dimension k+1: containing remainders</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.mixedQuad" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">mixedQuad</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="n">maxlev</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This function computes the integral of function G over a semi-infinite interval [a, infty)
+using an automatic mixed quadrature rule
+according to Michalski&amp;Mosig's paper in
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>a:      lower limit of the bounded integral
+eps:    square root of the desired precision
+maxlev: order of the tanh-sinh integration</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.omega" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">omega</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This function computes the ratio of the current and previous
+remainder estimates at the transformation order k in
+Mosig-Michalski algorithm 7
+according to Michalski&amp;Mosig's paper in
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>k:      instantaneous transformation order (k = 0,...,kmax)
+q:      equidistant spacing
+z:      source-observer distance in z-direction
+alpha:  0.5-nu, where nu is the order of Bessel function in the integrand
+X:      equidistant points (in rho)</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.partExtrap" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">partExtrap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="n">kmax</span><span class="p">,</span> <span class="n">maxlev</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This function computes the integral of function G over a semi-infinite interval [a, infty)
+using a general partition-extrapolation algorithm via MosigMichalski
+according to Michalski&amp;Mosig's paper in
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>a:      lower limit of the bounded integral
+nu:     order of Bessel function in the integrand
+eps:    square root of the desired precision
+kmax:   max order of the general WA algorithm
+maxlev: max level in DE tanh-sinh numerical integration</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.partSum" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">partSum</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">eh</span><span class="p">,</span> <span class="n">e2h</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Function computing higher level partial sum
+according to Michalski&amp;Mosig's automatic tanh-sinh quadrature
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>eh:     exponent of h (initial mesh size)
+e2h:    exponent of 2h (initial mesh size)
+eta:    positive parameter close to unity
+sigma:  half of the integration interval
+a:      lower limit of the bounded integration interval
+b:      upper limit of the bounded integration interval</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.tanhSinhQuad" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">tanhSinhQuad</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="n">maxlev</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>This function computes the integral of function G over a bounded interval [a, b]
+using an automatic tanh-sinh quadrature rule
+according to Michalski&amp;Mosig's paper in
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>a:      lower limit of the bounded integral
+b:      upper limit of the bounded integral
+eps:    square root of the desired precision
+maxlev: order of the tanh-sinh integration</p>
+<p>Function G(kro) should be programmed as a two-parameter procedure G(c, d),
+where kro = c + d, c = a or b, and d = ±σ δ , so that
+the singular part may be computed using d directly.
+For example, if the integrand comprises a term (kro−a)^(-alpha) (b-kro)^(-beta)
+with alpha &gt; 0 and beta &gt; 0, this procedure should compute it as
+compute it as
+d^(-alpha) * (b-kro)^(-beta) when d &gt; 0
+and as
+(kro - a)^(-alpha) * (-d)^(-beta) when d &lt; 0</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.term" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">term</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">ekh</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>kth term of quadrature rule
+according to Michalski&amp;Mosig's automatic tanh-sinh quadrature
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>ekh:    exponent of the kth term exp(kh)
+eta:    positive parameter close to unity
+sigma:  half of the integration interval
+a:      lower limit of the bounded integration interval
+b:      upper limit of the bounded integration interval</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.momi.truncIndex" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">truncIndex</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">eh</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">nmax</span><span class="p">,</span> <span class="n">kappa</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Function computing an initial truncation index and partial sum
+according to Michalski&amp;Mosig's automatic tanh-sinh quadrature
+https://doi.org/10.1080/09205071.2015.1129915</p>
+<p>G:      function to be integrated</p>
+      <p>eh:     exponent of h (initial mesh size)
+s:      initial value of the partial sum
+eta:    positive parameter close to unity
+sigma:  half of the integration interval
+a:      lower limit of the bounded integration interval
+b:      upper limit of the bounded integration interval
+nmax:   maximum number of points in the term quadrature rule
+kappa:  truncation error</p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="metagf.sommerfeld" class="doc doc-heading">
+        <code>sommerfeld</code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.gauleg" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">gauleg</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>gauleg: Gauss-Legendre n-point quadrature</p>
+<p>w, x  = gauleg(n, a1, a2)</p>
+<p>where:    Units,  Definition                             Limits
+n:        -       Number of integration points           &gt;1
+a1:       -       Lower limit of the integration
+a2:       -       Upper limit of the integration
+w:        -       Vector of weights
+x:        -       Vector of abscissae</p>
+<p>This subroutine computes the weights and abcissae for a Gauss- Legendre
+n-point quadrature formula.
+The program computes the n-roots of the Legendre polynomial of order n.
+It uses a Newton method to find numerically the zeros.</p>
+<h5 id="metagf.sommerfeld.gauleg--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    03OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.halfsine" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">halfsine</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">nints</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="func-">
+  <summary>function</summary>
+  <p>A Python function or method. If <code>func</code>takes many
+arguments, it is integrated along the axis corresponding to the
+first argument.</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>width of the half-sine contour</p>
+</details>
+<details class="c-">
+  <summary>float</summary>
+  <p>maximum height of the half-sine contour</p>
+</details>
+<details class="nints">
+  <summary>integer</summary>
+  <p>number of integration points</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>func</code></p>
+</details>
+<details class="y-">
+  <summary>float</summary>
+  <p>The value of the integral</p>
+</details>      <p>half_sine: computes the integral of the function func(x,args)
+over a half-sine contour defined by the widht <code>a</code> and height <code>c</code> using Gauss-Legendre
+quadrature with required number of integration points <code>nints</code>
+y  = half_sine(func, a, c, nints, args)</p>
+<h5 id="metagf.sommerfeld.halfsine--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.halfsine--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.halfsine--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    14NOV19     Ivica Stevanovic, OFCOM         First implementation</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.intt2_s0" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">intt2_s0</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">nt</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="intt2_s0">
+  <summary>computes the integral of the following function</summary>
+  <p>J0(x<em>r)</em>x*G(x)</p>
+</details>
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="nt-">
+  <summary>integer</summary>
+  <p>Number of points in Gauss-Legendre integration</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>Lower integration limit</p>
+</details>
+<details class="b-">
+  <summary>float</summary>
+  <p>Upper integration limit</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y-">
+  <summary>float</summary>
+  <p>The value of integral in the zero order Sommerfeld transformation
+over a bounded interval (a, b)</p>
+</details>      <pre><code>      in the bounded interval (a,b), where G(x, args) is spectral domain function
+      and J0(x) is Bessel function of zero order and first kind
+</code></pre>
+<p>y  = intt2_s0(G, rn, nt, a, b, args)</p>
+<h5 id="metagf.sommerfeld.intt2_s0--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.intt2_s0--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.intt2_s0--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    03OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.intt2_s1" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">intt2_s1</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">nt</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="intt2_s1">
+  <summary>computes the integral of the following function</summary>
+  <p>J1(x<em>r)</em>x^2<em>G(x,</em>args)</p>
+</details>
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="nt-">
+  <summary>integer</summary>
+  <p>Number of points in Gauss-Legendre integration</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>Lower integration limit</p>
+</details>
+<details class="b-">
+  <summary>float</summary>
+  <p>Upper integration limit</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y-">
+  <summary>float</summary>
+  <p>The value of integral in the zero order Sommerfeld transformation
+over a bounded interval (a, b)</p>
+</details>      <pre><code>      in the bounded interval (a,b), where G(x,*args) is spectral domain function
+      and J1(x) is Bessel function of first order and first kind
+</code></pre>
+<p>y  = intt2_s1(G, arg, rn, nt, a, b)</p>
+<h5 id="metagf.sommerfeld.intt2_s1--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.intt2_s1--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.intt2_s1--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    11OCT19     Ivica Stevanovic, OFCOM         First implementation in python</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.it1_s0" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">it1_s0</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">nt1</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="b1-">
+  <summary>float</summary>
+  <p>Smaller semi-axis of the elliptic path</p>
+</details>
+<details class="b2-">
+  <summary>float</summary>
+  <p>Larger axis of the elliptic path</p>
+</details>
+<details class="nt1-">
+  <summary>float</summary>
+  <p>Number of integration points</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y1-">
+  <summary>float</summary>
+  <p>The value of integral T1 (0,b1) in the zero order Sommerfeld transformation
+along the elliptic contour</p>
+</details>      <p>it1_s0: computes the integral T1 (0,b1) for the evaluation of zero order Sommerfeld transformation.
+The integral is computed following an elliptic contour path</p>
+<p>y  = it1_s0(G, rn, b1, b2, nt1, args)</p>
+<h5 id="metagf.sommerfeld.it1_s0--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.it1_s0--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.it1_s0--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    03OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.it1_s1" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">it1_s1</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">nt1</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="b1-">
+  <summary>float</summary>
+  <p>Smaller semi-axis of the elliptic path</p>
+</details>
+<details class="b2-">
+  <summary>float</summary>
+  <p>Larger axis of the elliptic path</p>
+</details>
+<details class="nt1-">
+  <summary>float</summary>
+  <p>Number of integration points</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y1-">
+  <summary>float</summary>
+  <p>The value of integral T1 (0,b1) in the first order Sommerfeld transformation
+along the elliptic contour</p>
+</details>      <p>it1_s1: computes the integral T1 (0,b1) for the evaluation of first order Sommerfeld transformation.
+The integral is computed following an elliptic contour path</p>
+<p>y  = it1_s1(G, rn, b1, b2, nt1)</p>
+<h5 id="metagf.sommerfeld.it1_s1--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.it1_s1--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.it1_s1--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    11OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.it2_s0" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">it2_s0</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">nt2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">nit</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="it2_s0">
+  <summary>computes the integral T2 (b2-infty) for the evaluation of zero order Sommerfeld transformation</summary>
+  <p>The integral is computed using the weighted averages method</p>
+</details>
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="b2-">
+  <summary>float</summary>
+  <p>Starting point of the integration path
+(corresponds to the larger ellipse axis)</p>
+</details>
+<details class="nt2-">
+  <summary>integer</summary>
+  <p>Number of integration points per segment</p>
+</details>
+<details class="y1-">
+  <summary>complex</summary>
+  <p>Value of the integral along the ellipse</p>
+</details>
+<details class="cs-">
+  <summary>integer</summary>
+  <p>cs = 1 when source and obesrver are at the same z-coordinate</p>
+</details>
+<details class="prec-">
+  <summary>float</summary>
+  <p>Required precision in the WA algorithm</p>
+</details>
+<details class="nit-">
+  <summary>integer</summary>
+  <p>Maximum number of iterations</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y2-">
+  <summary>float</summary>
+  <p>The value of integral T2 (b2, infty) in the zero order Sommerfeld transformation
+using weigthed averages</p>
+</details>      <p>y  = it2_s0(G, arg, rn, b2, nt2, y1, cs, prec)</p>
+<h5 id="metagf.sommerfeld.it2_s0--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.it2_s0--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.it2_s0--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    03OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.it2_s1" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">it2_s1</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rn</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">nt2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">nit</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="it2_s1">
+  <summary>computes the integral T2 (b2-infty) for the evaluation of first order Sommerfeld transformation</summary>
+  <p>The integral is computed using the weighted averages method</p>
+</details>
+<details class="g-">
+  <summary>function</summary>
+  <p>Spectral domain function G(kro, *args)</p>
+</details>
+<details class="rn-">
+  <summary>float</summary>
+  <p>Normalized spatial variable (rn = k0*r)</p>
+</details>
+<details class="b2-">
+  <summary>float</summary>
+  <p>Starting point of the integration path
+(corresponds to the larger ellipse axis)</p>
+</details>
+<details class="nt2-">
+  <summary>integer</summary>
+  <p>Number of integration points per segment</p>
+</details>
+<details class="y1-">
+  <summary>complex</summary>
+  <p>Value of the integral along the ellipse</p>
+</details>
+<details class="cs-">
+  <summary>integer</summary>
+  <p>cs = 1 when source and obesrver are at the same z-coordinate</p>
+</details>
+<details class="prec-">
+  <summary>float</summary>
+  <p>Required precision in the WA algorithm</p>
+</details>
+<details class="nit-">
+  <summary>integer</summary>
+  <p>Maximum number of iterations</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>G</code></p>
+</details>
+<details class="y2-">
+  <summary>float</summary>
+  <p>The value of integral T2 (b2, infty) in the first order Sommerfeld transformation
+using weigthed averages</p>
+</details>      <p>y  = it2_s1(G, rn, b2, nt2, y1, cs, prec)</p>
+<h5 id="metagf.sommerfeld.it2_s1--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.it2_s1--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.it2_s1--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    11OCT19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  from A. A. Melcon Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.sommerfeld.quad" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">nints</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="func-">
+  <summary>function</summary>
+  <p>A Python function or method. If <code>func</code>takes many
+arguments, it is integrated along the axis corresponding to the
+first argument.</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>lower limit of the integration interval</p>
+</details>
+<details class="b-">
+  <summary>float</summary>
+  <p>upper limit of the integration interval</p>
+</details>
+<details class="nints">
+  <summary>integer</summary>
+  <p>number of integration points</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>func</code></p>
+</details>
+<details class="y-">
+  <summary>float</summary>
+  <p>The value of the integral</p>
+</details>      <p>quad: computes the integral of the function func(x,args)
+over real-axis x using Gauss-Legendre
+quadrature with required number of integration points <code>nints</code>
+over interval  (a,b)
+y  = quad(func, a, b, nints, args)</p>
+<h5 id="metagf.sommerfeld.quad--parameters">Parameters</h5>
+<h5 id="metagf.sommerfeld.quad--returns">Returns</h5>
+<h5 id="metagf.sommerfeld.quad--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    14NOV19     Ivica Stevanovic, OFCOM         First implementation</p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="metagf.toms468" class="doc doc-heading">
+        <code>toms468</code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.toms468.halfsine" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">halfsine</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">epsil</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="func-">
+  <summary>function</summary>
+  <p>A Python function or method. If <code>func</code>takes many
+arguments, it is integrated along the axis corresponding to the
+first argument.</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>width of the half-sine contour</p>
+</details>
+<details class="c-">
+  <summary>float</summary>
+  <p>maximum height of the half-sine contour</p>
+</details>
+<details class="epsil">
+  <summary>float</summary>
+  <p>required precision in Patterson quadrature</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>func</code></p>
+</details>
+<details class="y-">
+  <summary>float</summary>
+  <p>The value of the integral</p>
+</details>
+<details class="npts-">
+  <summary>integer</summary>
+  <p>Number integrand evaluations.</p>
+</details>
+<details class="relerr-">
+  <summary>float</summary>
+  <p>The projected relative error achieved by Patterson quadrature</p>
+</details>
+<details class="icheck-">
+  <summary>integer</summary>
+  <p>On exit normally icheck = 0.  However, if convergence
+to the accuracy requested is not achieved, icheck = 1
+on exit.</p>
+</details>      <p>half_sine: computes the integral of the function func(x,args)
+over a half-sine contour defined by the widht <code>a</code> and height <code>c</code> using Patterson
+quadrature with required precision <code>epsil</code>
+y, npts, relerr, icheck  = half_sine(func, a, c, epsil, args)</p>
+<h5 id="metagf.toms468.halfsine--parameters">Parameters</h5>
+<h5 id="metagf.toms468.halfsine--returns">Returns</h5>
+<h5 id="metagf.toms468.halfsine--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    10NOV19     Ivica Stevanovic, OFCOM         First implementation</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.toms468.isign" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">isign</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Function isign(a, b) returns the value of a with the sign of b.</p>
+<h5 id="metagf.toms468.isign--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    10NOV19     Ivica Stevanovic, OFCOM         First implementation in python</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.toms468.qsub" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">qsub</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">epsil</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>qsub</p>
+<p>This function routine performs automatic integration
+over a finite interval using the basic integration
+algorithm quad, together with, if necessary, a non-
+adaptive subdivision process.
+  The call takes the form
+    qqsub, npts, relerr, icheck  = qsub(f, a, b epsil, args)
+and causes f(x,args) to be integrated over x in (a,b) with relative
+error hopefully not exceeding epsil.  Should quad converge
+(icheck=0) then qsub will return the value obtained by it;
+otherwise subdivision will be invoked as a rescue
+operation in a non-adaptive manner.  The argument relerr
+gives a crude estimate of the actual relative error
+obtained.
+  The subdivision strategy is as follows:
+Let the interval (a,b) be divided into 2**n panels at step
+n of the subdivision process.  quad is applied first to
+the subdivided interval on which quad last failed to
+converge, and if convergence is now achieved the remaining
+panels are integrated.  should a convergence failure occur
+on any panel, the integration at that point is terminated
+and the procedure repeated with n increased by 1.  The
+strategy ensures that possibly delinquent intervals are
+examined before work, which later might have to be
+discarded, is invested in well-behaved panels.  The
+process is complete when no convergence failure occurs on
+any panel and the sum of the results obtained by quad on
+each panel is taken as the value of the integral.
+  The process is very cautious in that the subdivision of
+the interval (a,b) is uniform, the fineness of which is
+controlled by the success of quad.  In this way, it is
+rather difficult for a spurious convergence to slip
+through.
+  The convergence criterion of quad is slightly relaxed
+in that a panel is deemed to have been successfully
+integrated if either quad converges or the estimated
+absolute error committed on this panel does not exceed
+epsil times the estimated absolute value of the integral
+over (a,b).  This relaxation is to try to take account of
+a common situation where one particular panel causes
+special difficulty, perhaps due to singularity of some
+type.  In this case, quad could obtain nearly exact
+answers on all other panels, and so the relative error for
+the total integration would be almost entirely due to the
+delinquent panel.  Without this condition, the computation
+might continue despite the requested relative error being
+achieved.
+  The outcome of the integration is indicated by icheck.
+  icheck = 0 - convergence obtained without invoking
+               subdivision.  This corresponds to the
+               direct use of quad.
+  icheck = 1 - result obtained after invoking subdivision.
+  icheck = 2 - as for icheck=1 but at some point the
+               relaxed convergence criterion was used.
+               the risk of underestimating the relative
+               error will be increased.  If necessary,
+               confidence may be restored by checking
+               epsil and relerr for a serious discrepancy.
+  icheck negative
+               if during the subdivision process the
+               allowed upper limit on the number of panels
+               that may be generated (presently 4096) is
+               reached, a result is obtained which may be
+               unreliable by continuing the integration
+               without further subdivision ignoring
+               convergence failures.  This occurrence is
+               flagged by returning icheck with negative
+               sign.
+The reliability of the algorithm will decrease for large
+values of epsil.  It is recommended that epsil should
+generally be less than about 0.001.</p>
+<h5 id="metagf.toms468.qsub--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    10NOV19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  translated from toms468 Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.toms468.qsuba" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">qsuba</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">epsil</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>qsuba</p>
+<p>This function routine performs automatic integration
+over a finite interval using the basic integration
+algorithm quad, together with, if necessary, an adaptive
+subdivision process.  It is generally more efficient than
+the non-adaptive algorithm qsub but is likely to be less
+reliable (see Comp.J., 14, 189, 1971 ).
+  The call takes the form
+    result, npts, relerr, icheck = qsuba(f, a, b, epsil, arg)
+and causes f(x, arg) to be integrated over x in (a,b) with relative
+error hopefully not exceeding epsil.  sShould quad converge
+(icheck=0) then qsuba will return the value obtained by it;
+otherwise subdivision will be invoked as a rescue
+operation in an adaptive manner.  The argument relerr gives
+a crude estimate of the actual relative error obtained.
+  The subdivision strategy is as follows:
+at each stage of the process, an interval is presented for
+subdivision.  (Initially this will be the whole interval
+(a,b)).  The interval is halved and quad applied to each
+subinterval.  Should quad fail on the first subinterval,
+the subinterval is stacked for future subdivision and the
+second subinterval immediately examined.  Should quad fail
+on the second subinterval, the subinterval is
+immediately subdivided and the whole process repeated.
+Each time a converged result is obtained, it is
+accumulated as the partial value of the integral.  When
+quad converges on both subintervals, the interval last
+stacked is chosen next for subdivision and the process
+repeated.  A subinterval is not examined again once a
+converged result is obtained for it, so that a spurious
+convergence is more likely to slip through than for the
+non-adaptive algorithm qsub.
+  The convergence criterion of quad is slightly relaxed
+in that a panel is deemed to have been successfully
+integrated if either quad converges or the estimated
+absolute error committed on this panel does not exceed
+epsil times the estimated absolute value of the integral
+over (a,b).  This relaxation is to try to take account of
+a common situation where one particular panel causes
+special difficulty, perhaps due to singularity of some
+type.  In this case, quad could obtain nearly exact
+answers on all other panels, and so the relative error for
+the total integration would be almost entirely due to the
+delinquent panel.  Without this condition, the computation
+might continue despite the requested relative error being
+achieved.
+  The outcome of the integration is indicated by icheck.
+  icheck = 0 - convergence obtained without invoking
+               subdivision.  This would correspond to the
+               direct use of quad.
+  icheck = 1 - result obtained after invoking subdivision.
+  icheck = 2 - as for icheck=1 but at some point the
+               relaxed convergence criterion was used.
+               the risk of underestimating the relative
+               error will be increased.  If necessary,
+               confidence may be restored by checking
+               epsil and relerr for a serious discrepancy.
+  icheck negative
+               If during the subdivision process the stack
+               of delinquent intervals becomes full (it is
+               presently set to hold at most 100 numbers)
+               a result is obtained by continuing the
+               integration ignoring convergence failures
+               which cannot be accommodated by the stack.
+               This occurrence is flagged by returning
+               icheck with negative sign.
+The reliability of the algorithm will decrease for large
+values of epsil.  iI is recommended that epsil should
+generally be less than about 0.001.</p>
+<h5 id="metagf.toms468.qsuba--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    10NOV19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  translated from toms468 Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="metagf.toms468.quad" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">epsil</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+<details class="func-">
+  <summary>function</summary>
+  <p>A Python function or method to integrate. If <code>func</code>takes many
+arguments, it is integrated along the axis corresponding to the
+first argument.</p>
+</details>
+<details class="a-">
+  <summary>float</summary>
+  <p>Lower limit of integration</p>
+</details>
+<details class="b-">
+  <summary>float</summary>
+  <p>Upper limit of integration</p>
+</details>
+<details class="args-">
+  <summary>tuple, optional</summary>
+  <p>Extra arguments to pass to <code>func</code></p>
+</details>
+<details class="epsil-">
+  <summary>float, optional</summary>
+  <p>Relative accuracy required.  When the relative
+difference of two successive formulae does not
+exceed <code>epsil</code> the last formula computed is taken
+as the result.</p>
+</details>
+<details class="result-">
+  <summary>array</summary>
+  <p>This array, which should be declared to have at
+least 8 elements, holds the results obtained by
+the 1, 3, 7, etc. point formulae.  The number of
+formulae computed depends on <code>epsil</code>.</p>
+</details>
+<details class="k-">
+  <summary>integer</summary>
+  <p>result[k] holds the value of the integral to the
+ specified relative accuracy.</p>
+</details>
+<details class="npts-">
+  <summary>integer</summary>
+  <p>Number integrand evaluations.</p>
+</details>
+<details class="icheck-">
+  <summary>integer</summary>
+  <p>On exit normally icheck = 0.  However, if convergence
+to the accuracy requested is not achieved, icheck = 1
+on exit.</p>
+</details>      <p>quad</p>
+<p>This subroutine attempts to calculate the integral of func(x)
+over the inverval <em>a</em> to <em>b</em> with relative error not
+exceeding <code>epsil</code>.
+The result is obtained using a sequence of 1, 3, 7, 15, 31, 63,
+127, and 255 point interlacing formulae (no integrand
+evaluations are wasted) of respective degrees 1, 5, 11, 23,
+47, 95, 191 and 383.  The formulae are based on the optimal
+extensions of the 3-point gauss formula.  Details of
+the formulae are given in 'the optimum addition of points
+to quadrature formulae' by T.N.L. Patterson, Maths. Comp.
+Vol 22, 847-856, 1968.</p>
+<h5 id="metagf.toms468.quad--parameters">Parameters</h5>
+<h5 id="metagf.toms468.quad--returns">Returns</h5>
+<p>Abscissae and weights of quadrature rules are stacked in
+array `p in the order in which they are needed.</p>
+<h5 id="metagf.toms468.quad--rev-date-author-description">Rev   Date        Author                          Description</h5>
+<p>v1    10NOV19     Ivica Stevanovic, OFCOM         First implementation in python
+                                                  translated from toms468 Fortran routine</p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
